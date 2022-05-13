@@ -1,0 +1,6 @@
+[submodule "FuQuiz-FE"]
+	path = FuQuiz-FE
+	url = https://github.com/niskyB/FuQuiz-FE
+[submodule "FuQuiz-BE"]
+	path = FuQuiz-BE
+	url = https://github.com/niskyB/FuQuiz-BE
