@@ -58,19 +58,19 @@ jobs:
     - name: push server to dockerhub
       run: |
            docker push dauleduc2/fuquizserver:latest
-  #  deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: [BuildAndPush]
-  #   steps:
-  #     - name: executing remote ssh commands using ssh key
-  #       uses: appleboy/ssh-action@master
-  #       with:
-  #         host: ${{ secrets.HOST }}
-  #         username: ${{ secrets.USERNAME }}
-  #         password: ${{ secrets.PASSWORD }}
-  #         port: ${{ secrets.PORT }}
-  #         script: |
-  #                 cd /app/Dating-app
-  #                 docker-compose pull
-  #                 docker-compose up -d
-  #                 echo done
+   deploy:
+    runs-on: ubuntu-latest
+    needs: [BuildAndPush]
+    steps:
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+                  cd /app
+                  docker-compose pull
+                  docker-compose up -d
+                  echo done
