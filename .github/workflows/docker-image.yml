@@ -34,6 +34,7 @@ jobs:
                 JWT_SECRET=${{ secrets.JWT_SECRET }}
 
                 SERVER_URL=${{ secrets.SERVER_URL }}
+                CLIENT_URL=${{ secrets.CLIENT_URL }}
 
                 SENDGRID_KEY=${{ secrets.SENDGRID_KEY }}
                 SENDGRID_SENDER=${{ secrets.SENDGRID_SENDER }}
