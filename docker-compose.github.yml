@@ -4,8 +4,6 @@ services:
     container_name: fuquizserver
     build: ./FuQuiz-BE
     image: dauleduc2/fuquizserver:latest
-    env_file:
-      - ./.env.production
     ports:
       - 4000:4000
     networks:
