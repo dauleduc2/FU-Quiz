@@ -2,6 +2,7 @@ version: "3"
 services:
   server:
     container_name: fuquizserver
+    build: ./FuQuiz-BE
     image: dauleduc2/fuquizserver:latest
     env_file:
       - ./.env.production
@@ -11,6 +12,7 @@ services:
       - tetcha
   client:
     container_name: fuquizclient
+    build: ./FuQuiz-FE
     image: dauleduc2/fuquizclient:latest
     ports:
       - 3000:3000
