@@ -23,7 +23,7 @@ jobs:
            cd ../
            cd ../
            cd ./FuQuiz-BE
-           mkdir config
+          #  mkdir config
            cd ./config
            echo "DB_USERNAME=${{ secrets.DB_USERNAME }}
                 DB_PASSWORD=${{ secrets.DB_PASSWORD }}
