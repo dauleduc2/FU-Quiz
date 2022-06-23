@@ -1,0 +1,21 @@
+version: "3"
+services:
+  server:
+    container_name: fuquizserver
+    image: dauleduc2/fuquizserver:latest
+    env_file:
+      - ./.env.production
+    ports:
+      - 4000:4000
+    networks:
+      - tetcha
+  client:
+    container_name: fuquizclient
+    image: dauleduc2/fuquizclient:latest
+    ports:
+      - 3000:3000
+    networks:
+      - tetcha
+networks:
+  tetcha:
+    external: true
