@@ -69,7 +69,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-                  cd /app
+                  cd /fuquiz
                   docker-compose pull
                   docker-compose up -d
                   echo done
