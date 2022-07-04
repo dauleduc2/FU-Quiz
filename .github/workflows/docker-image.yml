@@ -20,9 +20,9 @@ jobs:
            cd ./FuQuiz-FE
            cd ./config
            echo "SERVER_URL=${{ secrets.SERVER_URL }}" > .env.production
-           cd ../
-           cd ../
-           cd ./FuQuiz-BE
+          #  cd ../
+          #  cd ../
+          #  cd ./FuQuiz-BE
           #  cd ./config
           #  echo "DB_USERNAME=${{ secrets.DB_USERNAME }}
           #       DB_PASSWORD=${{ secrets.DB_PASSWORD }}
