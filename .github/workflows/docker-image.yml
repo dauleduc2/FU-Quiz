@@ -14,7 +14,7 @@ jobs:
     - name: Set up Node.js 16
       uses: actions/setup-node@v1
       with:
-        node-version: '16'
+        node-version: '14'
     - name : run command code to add .env file and push to server
       run: |
            cd ./FuQuiz-FE
