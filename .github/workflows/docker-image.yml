@@ -14,7 +14,7 @@ jobs:
     - name: Set up Node.js 16
       uses: actions/setup-node@v1
       with:
-        node-version: '16'
+        node-version: '14'
     - name : run command code to add .env file and push to server
       run: |
            cd ./FuQuiz-FE
@@ -45,7 +45,7 @@ jobs:
           #       AWS_BUCKET=${{ secrets.AWS_BUCKET }}" > .env.production
     - name: Build on docker-compose file
       run: |
-           docker-compose -f docker-compose.github.yml build
+           docker-compose -f docker-compose.github.yml build client
     - name: login to docker hub
       uses: docker/login-action@v1
       with:
