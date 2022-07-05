@@ -45,7 +45,7 @@ jobs:
           #       AWS_BUCKET=${{ secrets.AWS_BUCKET }}" > .env.production
     - name: Build on docker-compose file
       run: |
-           docker-compose -f docker-compose.github.yml build
+           docker-compose -f docker-compose.github.yml build client
     - name: login to docker hub
       uses: docker/login-action@v1
       with:
