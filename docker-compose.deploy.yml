@@ -1,0 +1,33 @@
+version: "3"
+services:
+  server:
+    container_name: fuquizserver
+    image: dauleduc2/fuquizserver:latest
+    ports:
+      - 4000:4000
+    networks:
+      - tetcha
+  client:
+    container_name: fuquizclient
+    image: dauleduc2/fuquizclient:latest
+    env_file:
+      - ./.env.production
+    ports:
+      - 3000:3000
+    networks:
+      - tetcha
+  db:
+    container_name: mysql
+    image: mysql:8.0.26
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: fu_quiz
+      MYSQL_ROOT_PASSWORD: 123456
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+networks:
+  tetcha:
+    external: true
