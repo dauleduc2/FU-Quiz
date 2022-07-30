@@ -21,6 +21,7 @@ jobs:
            cd ./config
            echo "SERVER_URL=${{ secrets.SERVER_URL }}
                  SENTRY_DSN=${{ secrets.SENTRY_DSN }}
+                 SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}
            " > .env.production
     - name: Build on docker-compose file
       run: |
