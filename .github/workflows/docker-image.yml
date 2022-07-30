@@ -19,7 +19,9 @@ jobs:
       run: |
            cd ./FuQuiz-FE
            cd ./config
-           echo "SERVER_URL=${{ secrets.SERVER_URL }}" > .env.production
+           echo "SERVER_URL=${{ secrets.SERVER_URL }}
+                 SENTRY_DSN=${{ secrets.SENTRY_DSN }}
+           " > .env.production
     - name: Build on docker-compose file
       run: |
            docker-compose -f docker-compose.github.yml build
